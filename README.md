@@ -5,6 +5,7 @@
 Welcome to E-Ganiriro, a social media platform built with Next.js, designed to connect people and foster community interaction. This application aims to provide users with a seamless and engaging experience to share their thoughts, connect with friends, and discover new content.
 
 ### Features
+
 - User Authentication: Secure sign-up and login functionality using JWT and OAuth 2.0.
 - Real-Time Updates: Instant notifications and updates using Socket.IO for seamless interaction.
 - Post Creation and Sharing: Users can create, edit, delete, and share posts with rich text and multimedia content.
@@ -14,6 +15,7 @@ Welcome to E-Ganiriro, a social media platform built with Next.js, designed to c
 - Responsive Design: Optimized for all devices, ensuring a consistent user experience on desktops, tablets, and mobile devices.
 
 ### Technology Stack
+
 #### frontend:
 
 - Next.js: Framework for server-rendered React applications.
