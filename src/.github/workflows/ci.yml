@@ -1,0 +1,31 @@
+name: E-Ganiriro-app
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install Dependences
+        run: npm install
+
+      - name: Run ESLint and Prettier
+        run: npm run lint
+
+      - name: Run formatters
+        run: npm run format
+
+      - name: Build project
+        run: npm run build
