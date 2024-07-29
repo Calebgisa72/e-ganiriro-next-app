@@ -20,7 +20,7 @@ jobs:
           node-version: "20.x"
 
       - name: Install Dependences
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Generate Prisma client
         run: npx prisma generate
