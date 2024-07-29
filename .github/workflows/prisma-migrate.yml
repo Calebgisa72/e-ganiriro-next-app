@@ -28,4 +28,4 @@ jobs:
       - name: Migrate database
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npx prisma db push
+        run: prisma migrate dev --preview-feature
