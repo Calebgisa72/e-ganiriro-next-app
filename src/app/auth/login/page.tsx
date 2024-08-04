@@ -11,15 +11,15 @@ export const metadata: Metadata = {
 
 const Login = () => {
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center ">
+    <div className="w-full self-center flex flex-col items-center justify-center ">
       <div className="flex border-[1px] border-slate-500 h-[450px] w-[300px] sm:w-[650px] rounded-xl overflow-hidden items-center">
         <div className="flex flex-col gap-3 items-center w-full sm:w-[55%] p-5">
           <div>
-            <p className="uppercase text-teal-900 font-bold">Login to E-Ganiriro</p>
+            <p className="uppercase text-primary font-bold">Login to E-Ganiriro</p>
           </div>
           <LoginForm />
           <Link href={'/auth/signup'}>
-            <p className="text-sm hover:underline text-teal-900 ">
+            <p className="text-sm hover:underline text-pretty ">
               Don&apos;t have an account? Register
             </p>
           </Link>
@@ -28,6 +28,7 @@ const Login = () => {
           className="hidden sm:block w-[45%] object-cover object-left h-full"
           src={loginImage}
           alt="Signup"
+          priority={true}
         />
       </div>
     </div>
