@@ -32,8 +32,7 @@ Welcome to E-Ganiriro, a social media platform built with Next.js, designed to c
 
 #### Authentication:
 
-- JWT: JSON Web Tokens for secure authentication.
-- OAuth 2.0: Authentication via Google.
+- Lucia-auth
 
 #### Deployment:
 
