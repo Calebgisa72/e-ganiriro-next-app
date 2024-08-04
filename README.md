@@ -26,8 +26,9 @@ Welcome to E-Ganiriro, a social media platform built with Next.js, designed to c
 #### Backend:
 
 - Node.js: JavaScript runtime for building scalable network applications.
-- Express.js: Web framework for building RESTful APIs.
 - PostgreSql
+- Prisma Orm
+- Server actions
 - Socket.IO: Library for real-time web applications.
 
 #### Authentication:
