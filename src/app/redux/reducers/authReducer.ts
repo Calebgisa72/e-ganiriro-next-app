@@ -2,11 +2,11 @@ import { sessionPros } from '@/src/auth';
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface sessionInfo {
-  session: sessionPros | null;
+  currentUser: sessionPros | null;
 }
 
 const initialState: sessionInfo = {
-  session: null
+  currentUser: null
 };
 
 const sessionSlice = createSlice({
@@ -14,7 +14,7 @@ const sessionSlice = createSlice({
   initialState: initialState,
   reducers: {
     setSession: (state, action) => {
-      state.session = action.payload;
+      state.currentUser = action.payload;
     }
   }
 });

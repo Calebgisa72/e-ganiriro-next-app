@@ -1,5 +1,9 @@
-import Image from 'next/image';
+import PostEditor from '../post/PostEditor';
 
-export default function Home() {
-  return <div className="px-6 py-3">Caleb</div>;
+export default async function Home() {
+  return (
+    <div className="px-5 w-full">
+      <PostEditor />
+    </div>
+  );
 }

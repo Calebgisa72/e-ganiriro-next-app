@@ -1,0 +1,15 @@
+/* This is for tiptap feature to work lilke the placeholder, I copied it from the tiptac docs */
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: theme(
+    'colors.muted.foreground'
+  ); /* The theme helps to use the current theme and the color are from shedcn */
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.tiptap.ProseMirror {
+  outline: none;
+}
