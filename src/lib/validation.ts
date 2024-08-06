@@ -15,9 +15,14 @@ export const signupSchema = z.object({
 export type signupProps = z.infer<typeof signupSchema>;
 
 export const loginSchema = z.object({
-    username: requiredString,
-    password: requiredString
-}) 
+  username: requiredString,
+  password: requiredString
+});
 
 export type loginProps = z.infer<typeof loginSchema>;
- 
+
+export const createPostSchema = z.object({
+  content: requiredString
+});
+
+export type postProps = z.infer<typeof createPostSchema>;

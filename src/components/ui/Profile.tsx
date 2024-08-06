@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setSession } from '@/src/app/redux/reducers/authReducer';
 import { NavbarProps } from './Navbar';
@@ -26,7 +26,18 @@ import { useTheme } from 'next-themes';
 const Profile = ({ session }: NavbarProps) => {
   const dispatch = useDispatch();
   const { theme, setTheme } = useTheme();
-  dispatch(setSession(session?.user));
+
+  const handleLogout = async () => {
+    await logout();
+    dispatch(setSession({}));
+  };
+
+  useEffect(() => {
+    if (session?.user) {
+      dispatch(setSession(session.user));
+    }
+  }, [session, dispatch]);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -83,7 +94,7 @@ const Profile = ({ session }: NavbarProps) => {
           </DropdownMenuPortal>
         </DropdownMenuSub>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => logout()} className="cursor-pointer">
+        <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
           <LogOutIcon className="mr-2 size-5" />
           Logout
         </DropdownMenuItem>
