@@ -17,7 +17,7 @@ const Search = () => {
     <form
       onSubmit={handleSearch}
       action={'/search'}
-      className="flex items-center w-full bg-primary rounded-lg overflow-hidden">
+      className="flex items-center sm: w-52 sm:w-full bg-primary rounded-lg overflow-hidden">
       <Input
         className="bg-secondary text-secondary-foreground h-[25px] sm:h-[35px]"
         name="query"

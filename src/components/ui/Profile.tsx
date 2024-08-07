@@ -1,10 +1,10 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setSession } from '@/src/app/redux/reducers/authReducer';
 import { NavbarProps } from './Navbar';
 import userIcon from '@/src/assets/avatar-placeholder.png';
-import { Check, LogOutIcon, Monitor, Moon, Sun } from 'lucide-react';
+import { Check, Loader2, LogOutIcon, Monitor, Moon, Sun } from 'lucide-react';
 import UserAvatar from './UserAvatar';
 import {
   DropdownMenuContent,
@@ -26,9 +26,12 @@ import { useTheme } from 'next-themes';
 const Profile = ({ session }: NavbarProps) => {
   const dispatch = useDispatch();
   const { theme, setTheme } = useTheme();
+  const [loggingOut, setLoggingOut] = useState(false);
 
   const handleLogout = async () => {
+    setLoggingOut(true);
     await logout();
+    setLoggingOut(false);
     dispatch(setSession({}));
   };
 
@@ -42,7 +45,7 @@ const Profile = ({ session }: NavbarProps) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className="flex flex-shrink-0 rounded-full items-center">
-          <UserAvatar avatarUrl={session?.user?.profilePic} size={40} />
+          {loggingOut? <Loader2 className='size-5 animate-spin'/>: <UserAvatar avatarUrl={session?.user?.profilePic} size={40} />}
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

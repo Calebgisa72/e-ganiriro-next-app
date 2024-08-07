@@ -29,7 +29,7 @@ export async function signup(credentials: signupProps): Promise<{ error: string 
         error: 'Email is already registered.'
       };
     }
-    const passwordHash = await bcrypt.hash(password, 10);
+    const passwordHash = await bcrypt.hashSync(password, 10);
     const userId = generateIdFromEntropySize(10);
     await prisma.user.create({
       data: {
