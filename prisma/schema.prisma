@@ -48,5 +48,5 @@ model Post {
   createdAt DateTime @default(now())
   user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
 
-  @@map("Posts")
+   @@map("Posts")
 }

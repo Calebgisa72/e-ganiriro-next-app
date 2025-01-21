@@ -22,7 +22,8 @@ const PostEditor = () => {
       Placeholder.configure({
         placeholder: 'Make a new post ...'
       })
-    ]
+    ],
+    immediatelyRender: false
   });
 
   const input =

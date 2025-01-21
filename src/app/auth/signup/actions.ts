@@ -10,6 +10,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 export async function signup(credentials: signupProps): Promise<{ error: string }> {
+  const cookieStore = await cookies();
   try {
     const { username, email, firstName, lastName, password } = signupSchema.parse(credentials);
 
@@ -44,7 +45,7 @@ export async function signup(credentials: signupProps): Promise<{ error: string 
 
     const session = await lucia.createSession(userId, {});
     const sessionCookie = lucia.createSessionCookie(session.id);
-    cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
+    cookieStore.set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
 
     redirect('/');
   } catch (error) {

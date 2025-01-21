@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -15,7 +16,7 @@
     --primary-foreground: 355.7 100% 97.3%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 2.8% 94.9%;
+    --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
@@ -59,6 +60,7 @@
     --chart-5: 340 75% 55%;
   }
 }
+
 
 
 @layer base {

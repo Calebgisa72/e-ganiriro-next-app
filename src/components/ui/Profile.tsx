@@ -22,14 +22,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { logout } from '@/src/app/auth/actions';
 import { useTheme } from 'next-themes';
+import { useQueryClient } from '@tanstack/react-query';
 
 const Profile = ({ session }: NavbarProps) => {
   const dispatch = useDispatch();
   const { theme, setTheme } = useTheme();
   const [loggingOut, setLoggingOut] = useState(false);
+  const queryClient = useQueryClient();
 
   const handleLogout = async () => {
     setLoggingOut(true);
+    queryClient.clear(); // clearing queries
     await logout();
     setLoggingOut(false);
     dispatch(setSession({}));
@@ -45,7 +48,11 @@ const Profile = ({ session }: NavbarProps) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className="flex flex-shrink-0 rounded-full items-center">
-          {loggingOut? <Loader2 className='size-5 animate-spin'/>: <UserAvatar avatarUrl={session?.user?.profilePic} size={40} />}
+          {loggingOut ? (
+            <Loader2 className="size-5 animate-spin" />
+          ) : (
+            <UserAvatar avatarUrl={session?.user?.profilePic} size={40} />
+          )}
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
